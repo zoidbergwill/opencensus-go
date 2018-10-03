@@ -103,3 +103,15 @@ func (e *PrintExporter) ExportSpan(vd *trace.SpanData) {
 		}
 	}
 }
+
+// NoopExporter is a stats and trace exporter that logs
+// the exported data to the console.
+type NoopExporter struct{}
+
+// ExportView logs the view data.
+func (e *NoopExporter) ExportView(vd *view.Data) {
+}
+
+// ExportSpan logs the trace span.
+func (e *NoopExporter) ExportSpan(vd *trace.SpanData) {
+}
